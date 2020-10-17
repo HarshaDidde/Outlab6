@@ -1,0 +1,78 @@
+<div class="container">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>
+        Name:
+        <input type="text" formControlName="Name" />
+      </label>
+    </div>
+    <div>
+      <label>
+        Email:
+        <input type="text" formControlName="Email" />
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="feedback">Feedback:</label>
+      <div>
+        <input
+          id="Great"
+          type="radio"
+          value="Great"
+          name="feedback"
+          formControlName="feedback"
+        />
+        <label for="Great"><span> </span> Great</label>
+      </div>
+
+      <div>
+        <input
+          id="Okay"
+          type="radio"
+          value="Okay"
+          name="feedback"
+          formControlName="feedback"
+        />
+        <label for="Okay">Okay</label>
+      </div>
+
+      <div>
+        <input
+          id="Notgood"
+          type="radio"
+          value="Notgood"
+          name="feedback"
+          formControlName="feedback"
+        />
+        <label for="Notgood">Not good</label>
+      </div>
+
+      <div style="padding-top: 10px">
+        <label>
+          Comments:
+
+          <textarea
+            formControlName="Comments"
+            style="height: 170px; margin-top: 10px"
+          ></textarea>
+        </label>
+      </div>
+
+      <!-- <div
+          *ngIf="f.feedback.touched && f.feedback.invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f.feedback.errors.required">Name is required.</div>
+        </div> -->
+    </div>
+
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="!profileForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>
